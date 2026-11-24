@@ -1,0 +1,13 @@
+node_modules/
+.quasar/
+dist/
+.tmp/
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+logs/
+*.log
