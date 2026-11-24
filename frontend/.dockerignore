@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.quasar/
+.git/
+.vscode/
+.idea/
+*.log
