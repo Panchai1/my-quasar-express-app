@@ -38,6 +38,8 @@
     <q-card>
       <q-card-section>
         <div class="text-h6">Docker Quick Reference</div>
+        <div class="text-caption text-grey-7">รวมคำสั่ง Docker ที่ใช้บ่อย</div>
+
         <q-list bordered separator class="q-mt-sm">
           <q-item v-for="(ref, index) in dockerQuickRef" :key="index">
             <q-item-section>
@@ -48,8 +50,6 @@
         </q-list>
       </q-card-section>
     </q-card>
-  </q-page>
-</template>
 
 <script setup>
 const gitSteps = [
@@ -96,20 +96,24 @@ const dockerItems = [
 
 const dockerQuickRef = [
   {
-    command: 'docker build -t my-quasar-frontend:latest -f frontend/Dockerfile ./frontend',
-    whenToUse: 'ใช้เมื่อต้องการสร้าง Docker image ใหม่จาก Dockerfile และซอร์สโค้ดของแอป',
+    command: 'docker build',
+    whenToUse: 'ใช้สร้าง Docker Image จาก Dockerfile เมื่อต้องการสร้าง Image สำหรับแอปพลิเคชัน',
   },
   {
-    command: 'docker run -d -p 8080:80 --name my-quasar-frontend-container my-quasar-frontend:latest',
-    whenToUse: 'ใช้เมื่อต้องการรัน container จาก image ในเบื้องหลังและเปิดพอร์ต 8080 บนเครื่องเพื่อทดสอบ',
+    command: 'docker run',
+    whenToUse: 'ใช้สร้างและเริ่มต้น Container จาก Image เมื่อต้องการเปิดแอปพลิเคชัน',
+  },
+  {
+    command: 'docker ps',
+    whenToUse: 'ใช้ตรวจสอบ Container ที่กำลังทำงานอยู่',
   },
   {
     command: 'docker compose up -d --build',
-    whenToUse: 'ใช้เมื่อต้องการ build image และรันบริการทั้งหมดตาม docker-compose.yml ในโหมดเบื้องหลัง',
+    whenToUse: 'ใช้ Build Image และเริ่มบริการทั้งหมดด้วย Docker Compose ในเบื้องหลัง',
   },
   {
     command: 'docker compose down',
-    whenToUse: 'ใช้เมื่อต้องการหยุดและลบ container รวมถึงเครือข่ายที่สร้างโดย Docker Compose เมื่อเสร็จสิ้นการใช้งาน',
+    whenToUse: 'ใช้หยุดและลบ Container กับ Network ที่ Docker Compose สร้างไว้',
   },
 ]
 </script>
