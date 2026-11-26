@@ -50,6 +50,8 @@
         </q-list>
       </q-card-section>
     </q-card>
+  </q-page>
+</template>
 
 <script setup>
 const gitSteps = [
